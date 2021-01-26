@@ -14,7 +14,20 @@ depositBtn.addEventListener('click', function () {
 
     const currentDeposit = parseFloat(document.getElementById('currentDeposit').innerText);
     const totalDeposit = depositAmount + currentDeposit;
-    console.log(totalDeposit);
-    
     document.getElementById('currentDeposit').innerText = totalDeposit;
+
+
+    spanText('currentBalance', depositAmount);
+    // const currentBalance = parseFloat(document.getElementById('currentBalance').innerText);
+    // totalBalance = depositAmount + currentBalance;
+    // document.getElementById('currentBalance').innerText = totalBalance;
+
+    document.getElementById('depositAmount').value = '';
 });
+
+function spanText(id, depositAmount) {
+    const currentBalance = parseFloat(document.getElementById(id).innerText);
+    totalBalance = depositAmount + currentBalance;
+    document.getElementById(id).innerText = totalBalance;
+
+}

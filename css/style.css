@@ -4,7 +4,7 @@ body {
 
 .submit-area {
     margin-top: 50px;
-    padding: 40px;
+    padding: 50px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px grey;
 }
@@ -24,9 +24,18 @@ body {
 .balance {
     background: orange;
 }
-.status{
+
+.status {
     margin: 0 20px;
-    padding: 20px;
+    padding: 10%;
     color: white;
     border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* Responsive Design */
+@media screen and (max-width:600px) {
+    .status {
+        padding: 10px;
+    }
 }

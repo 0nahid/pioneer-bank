@@ -7,27 +7,39 @@ loginBtn.addEventListener('click', function () {
     transactionArea.style.display = 'block';
 });
 
+function spanText(id, depositAmount) {
+    const current = parseFloat(document.getElementById(id).innerText);
+    totalAmount = depositAmount + current;
+    document.getElementById(id).innerText = totalAmount;
+}
+function getInputNumber(id) {
+    const amount = parseFloat(document.getElementById(id).value);
+    return amount;
+};
 //  Deposit button handler
 const depositBtn = document.getElementById('addDeposit');
 depositBtn.addEventListener('click', function () {
-    const depositAmount = parseFloat(document.getElementById('depositAmount').value);
+    // const depositAmount = parseFloat(document.getElementById('depositAmount').value);
+    const depositAmount = getInputNumber('depositAmount');
 
-    const currentDeposit = parseFloat(document.getElementById('currentDeposit').innerText);
-    const totalDeposit = depositAmount + currentDeposit;
-    document.getElementById('currentDeposit').innerText = totalDeposit;
+    // const currentDeposit = parseFloat(document.getElementById('currentDeposit').innerText);
+    // const totalDeposit = depositAmount + currentDeposit;
+    // document.getElementById('currentDeposit').innerText = totalDeposit;
 
-
+    spanText('currentDeposit', depositAmount)
     spanText('currentBalance', depositAmount);
+
     // const currentBalance = parseFloat(document.getElementById('currentBalance').innerText);
     // totalBalance = depositAmount + currentBalance;
     // document.getElementById('currentBalance').innerText = totalBalance;
-
     document.getElementById('depositAmount').value = '';
 });
 
-function spanText(id, depositAmount) {
-    const currentBalance = parseFloat(document.getElementById(id).innerText);
-    totalBalance = depositAmount + currentBalance;
-    document.getElementById(id).innerText = totalBalance;
+// Withdraw event handler
+const withdrawBtn = document.getElementById('addWithdraw');
+// const withdrawAmount = parseFloat(document.getElementById('withdrawAmount').value);
+withdrawBtn.addEventListener('click', function () {
+    const withdrawAmount = getInputNumber('withdrawAmount');
+    console.log(withdrawAmount);
+});
 
-}
